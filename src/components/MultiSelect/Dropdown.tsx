@@ -3,6 +3,7 @@ import { Character } from "../../types/character";
 import DropdownItem from "./DropdownItem";
 
 const Dropdown: React.FC<{
+  loading: boolean;
   isDropdownOpen: boolean;
   results: Character[];
   resultRefs: React.RefObject<(HTMLDivElement | null)[]>;
@@ -18,6 +19,7 @@ const Dropdown: React.FC<{
   resultsContainerRef: React.RefObject<HTMLDivElement>;
   query: string;
 }> = ({
+  loading,
   isDropdownOpen,
   results,
   resultRefs,
@@ -61,7 +63,7 @@ const Dropdown: React.FC<{
             ))}
             <div className="load-more">
               <button className="btn" onClick={handleLoadMoreClick}>
-                Load More
+                {loading ? "Loading..." : "Load More"}
               </button>
             </div>
           </>

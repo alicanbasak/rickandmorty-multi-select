@@ -102,6 +102,7 @@ const MultiSelectContainer: React.FC = () => {
         setResults={setResults} // Pass setResults
       />
       <Dropdown
+        loading={loading}
         isDropdownOpen={isDropdownOpen}
         results={results}
         resultRefs={resultRefs}
